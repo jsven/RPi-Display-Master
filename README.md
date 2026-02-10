@@ -13,7 +13,7 @@ The ultimate "One-Line" configuration tool for non-standard Raspberry Pi display
 ---
 
 ## 🌐 在线脚本生成器 (Online Generator)
-为了获得最佳体验，请访问我们的 **[在线配置工具](https://your-domain.com)**。
+为了获得最佳体验，请访问我们的 **[在线配置工具(未部署)](https://github.com/jsven/RPi-Display-Master?tab=readme-ov-file#%E6%A0%B8%E5%BF%83%E5%8A%9F%E8%83%BD)**。
 只需选择您的屏幕型号和系统版本，即可获得专属的一键安装指令。
 
 ---
@@ -36,7 +36,7 @@ The ultimate "One-Line" configuration tool for non-standard Raspberry Pi display
 ### 1. 快速开始
 在树莓派终端输入你在网页端生成的指令，例如：
 ```bash
-curl -sL https://your-api-domain.com/install?id=88bar&rot=90 | sudo bash
+curl -sL https://[your-api-domain.com]/install?id=88bar&rot=90 | sudo bash
 ```
 
 ### 2. 参数说明
