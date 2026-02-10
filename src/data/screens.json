@@ -1,0 +1,121 @@
+[
+  {
+    "id": "88bar",
+    "name": {
+      "zh": "8.8寸长条屏 (480x1920)",
+      "en": "8.8-inch Bar Display (480x1920)"
+    },
+    "tags": ["bar", "non-standard", "hdmi"],
+    "scenario": "hdmi_cvt",
+    "resolution": { "width": 480, "height": 1920 },
+    "hdmi": {
+      "hdmi_group": 2,
+      "hdmi_mode": 87,
+      "hdmi_drive": 2,
+      "hdmi_cvt": "480 1920 60 6 0 0 0"
+    },
+    "touch": {
+      "type": "usb",
+      "notes": {
+        "zh": "多数长条屏触摸为 USB HID，旋转后需写入 libinput CalibrationMatrix（X11）。",
+        "en": "Most bar displays use USB HID touch; after rotation you may need libinput CalibrationMatrix (X11)."
+      }
+    },
+    "lcdShow": null
+  },
+  {
+    "id": "7std",
+    "name": {
+      "zh": "7寸标准屏 (1024x600)",
+      "en": "7-inch Standard Display (1024x600)"
+    },
+    "tags": ["standard", "hdmi"],
+    "scenario": "hdmi_cvt",
+    "resolution": { "width": 1024, "height": 600 },
+    "hdmi": {
+      "hdmi_group": 2,
+      "hdmi_mode": 87,
+      "hdmi_drive": 2,
+      "hdmi_cvt": "1024 600 60 6 0 0 0"
+    },
+    "touch": {
+      "type": "usb",
+      "notes": {
+        "zh": "常见 7 寸 HDMI 屏触摸为 USB HID；如为 I2C 触摸请按屏厂商说明加载 overlay。",
+        "en": "Common 7-inch HDMI displays use USB HID touch; for I2C touch, load the vendor overlay/driver."
+      }
+    },
+    "lcdShow": null
+  },
+  {
+    "id": "5round",
+    "name": {
+      "zh": "5寸圆屏 (1080x1080)",
+      "en": "5-inch Round Display (1080x1080)"
+    },
+    "tags": ["round", "hdmi"],
+    "scenario": "hdmi_cvt",
+    "resolution": { "width": 1080, "height": 1080 },
+    "hdmi": {
+      "hdmi_group": 2,
+      "hdmi_mode": 87,
+      "hdmi_drive": 2,
+      "hdmi_cvt": "1080 1080 60 1 0 0 0"
+    },
+    "touch": {
+      "type": "i2c",
+      "notes": {
+        "zh": "部分圆屏触摸走 I2C（需 overlay/驱动）；旋转后仍可写入 CalibrationMatrix（X11）。",
+        "en": "Some round displays use I2C touch (needs overlay/driver); you can still write CalibrationMatrix (X11)."
+      }
+    },
+    "lcdShow": null
+  },
+  {
+    "id": "lcdshow-lcd7c",
+    "name": {
+      "zh": "LCD-show：7寸 HDMI Display-C (1024x600) 驱动安装",
+      "en": "LCD-show: 7-inch HDMI Display-C (1024x600) Driver Install"
+    },
+    "tags": ["lcd-show", "driver", "hdmi"],
+    "scenario": "lcd_show_driver",
+    "resolution": { "width": 1024, "height": 600 },
+    "hdmi": null,
+    "touch": {
+      "type": "usb",
+      "notes": {
+        "zh": "该场景会从 LCD-show 仓库安装驱动并按角度旋转（脚本通常会自动重启）。",
+        "en": "This scenario installs driver from LCD-show repo and applies rotation (installer often reboots automatically)."
+      }
+    },
+    "lcdShow": {
+      "repo": "https://github.com/goodtft/LCD-show.git",
+      "installer": "LCD7C-show",
+      "supportsRotationArg": true
+    }
+  },
+  {
+    "id": "lcdshow-lcd5",
+    "name": {
+      "zh": "LCD-show：5寸 HDMI Display(电阻触摸) 驱动安装",
+      "en": "LCD-show: 5-inch HDMI Display (resistive touch) Driver Install"
+    },
+    "tags": ["lcd-show", "driver", "hdmi"],
+    "scenario": "lcd_show_driver",
+    "resolution": { "width": 800, "height": 480 },
+    "hdmi": null,
+    "touch": {
+      "type": "usb",
+      "notes": {
+        "zh": "该场景会克隆 LCD-show 并执行 LCD5-show，可传入 0/90/180/270。",
+        "en": "This scenario clones LCD-show and runs LCD5-show, supports 0/90/180/270 argument."
+      }
+    },
+    "lcdShow": {
+      "repo": "https://github.com/goodtft/LCD-show.git",
+      "installer": "LCD5-show",
+      "supportsRotationArg": true
+    }
+  }
+]
+
